@@ -5,7 +5,7 @@
 
 * {
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
 
@@ -40,7 +40,7 @@ ul {
 }
 
 .main-font {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
@@ -95,7 +95,7 @@ ul {
   margin: 4rem auto;
 }
 
-/*Container for all content on page*/
+
 .container {
   height: 100vh;
   display: grid;
@@ -105,7 +105,7 @@ ul {
   padding: 0;
 }
 
-/*Grid for placement of navigation*/
+
 .container header.grid-header {
   grid-column-start: 1;
   grid-column-end: 4;
@@ -113,7 +113,7 @@ ul {
   background-color: var(--background-color);
 }
 
-/*Grid for main content area*/
+
 .container main.grid-main {
   grid-row-start: 2;
   grid-column-start: 2;
@@ -121,7 +121,6 @@ ul {
   background-color: var(--background-color);
 }
 
-/*Grid for footer*/
 .container footer.grid-footer {
   grid-column-start: 1;
   grid-column-end: 4;
@@ -135,14 +134,14 @@ ul {
   color: var(--main-color);
 }
 
-/*Look for a normal, unvisited link*/
+
 a:link {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 1rem;
 }
 
-/*Look for a link when the user mouses over it*/
+
 a:hover {
   text-underline-offset: 0.2rem;
   text-decoration: none;
@@ -163,7 +162,7 @@ footer a:hover {
   text-decoration: underline #FFFFFF;
 }
 
-/*Main content area for start page to center the image*/
+
 #main-flex {
   display: flex;
   flex-direction: column;
@@ -194,7 +193,7 @@ footer a:hover {
   margin-right: auto;
 }
 
-/*Make image on home page smaller with smaller screen*/
+
 @media screen {
   #main-flex-img {
       width: 100vw;
@@ -237,11 +236,6 @@ footer a:hover {
   }
 }
 
-/*Placement for loading icon*/
-/*.loading-icon {
-  margin-top: 50vh;
-  margin-left: 48vw;
-}*/
 
 .menu-list {
   list-style: none;
