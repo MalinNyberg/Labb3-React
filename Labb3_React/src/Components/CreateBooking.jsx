@@ -8,22 +8,22 @@ import { ChooseTable } from "./ChooseTable";
 export default function CreateBooking() {
 
     const [numberOfGuests, setNumberOfGuests] = useState('');
-    const [bookedDateTime, setBookedDateTime] = useState('');
-    const [name, setName] = useState('');
+    const [bookedDate, setBookedDate] = useState('');
+    const [customerName, setcustomerName] = useState('');
     const [email, setEmail] = useState('');
-    const [phoneNo, setPhoneNo] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [availableTables, setAvailableTables] = useState(null);
     const [serverResponse, setServerResponse] = useState('');
 
     async function getAvailableTables(e){
         e.preventDefault();
-        const tableResponse = await checkAvailableTables(bookedDateTime);
+        const tableResponse = await checkAvailableTables(bookedDate);
         setAvailableTables(tableResponse.data);
         setServerResponse(tableResponse.status);
     }
 
-    async function handleSubmit(tableId){
-        const response = await createBooking(numberOfGuests, bookedDateTime, name, email, phoneNo, tableId);
+    async function handleSubmit(choosenTableId){
+        const response = await createBooking(numberOfGuests, bookedDate, customerName, email, phoneNumber, choosenTableId);
         setServerResponse(response);   
     }
     
@@ -49,16 +49,16 @@ export default function CreateBooking() {
                         <Form.Label>Select date and time to book a table</Form.Label>
                         <Form.Control 
                             type="datetime-local" 
-                            value={bookedDateTime} 
-                            onChange={(e) => setBookedDateTime(e.target.value)}
+                            value={bookedDate} 
+                            onChange={(e) => setBookedDate(e.target.value)}
                             required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Name:</Form.Label>
                         <Form.Control 
                             type="text" 
-                            value={name} 
-                            onChange={(e) => setName(e.target.value)}
+                            value={customerName} 
+                            onChange={(e) => setcustomerName(e.target.value)}
                             required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -73,8 +73,8 @@ export default function CreateBooking() {
                         <Form.Label>PhoneNumber</Form.Label>
                         <Form.Control 
                             type="text" 
-                            value={phoneNo} 
-                            onChange={(e) => setPhoneNo(e.target.value)}
+                            value={phoneNumber} 
+                            onChange={(e) => setPhoneNumber(e.target.value)}
                             required />
                     </Form.Group>
 

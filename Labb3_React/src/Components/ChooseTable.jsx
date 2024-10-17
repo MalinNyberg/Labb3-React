@@ -9,12 +9,12 @@ export function ChooseTable({availableTables, sendToCreateBooking}) {
             
             {availableTables.map(table => {
                 return (
-                    <div key={table.tableId}>
+                    <div key={table.id}>
                         <Card style={{ width: '18rem' }} className='table-card'>
                             <Card.Body>
                                 <Card.Text className='card-p'>Table number: {table.tableNumber}</Card.Text>
                                 <Card.Text className='card-p'>Number of seats: {table.numberOfSeats}</Card.Text>
-                                <Button variant="primary" onClick={() => sendToCreateBooking(table.tableId)}>Choose</Button>
+                                <Button variant="primary" onClick={() => sendToCreateBooking(table.id)}>Choose</Button>
                             </Card.Body>
                         </Card>
                     </div>

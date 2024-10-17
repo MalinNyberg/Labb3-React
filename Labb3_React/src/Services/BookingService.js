@@ -11,14 +11,18 @@ export async function checkAvailableTables(reservedDateTime) {
     }
 }
 
-export async function createBooking(numberOfGuests, bookedDate, customerName, email, phoneNumber, tableId) {
+export async function createBooking(numberOfGuests, bookedDate, customerName, email, phoneNumber, choosenTableId) {
     try{
-        const booking = { numberOfPeople: parseInt(numberOfGuests), 
-            date: new Date(bookedDate), 
-            phoneNumber, 
-            customerName, 
+        const id = parseInt(0);        
+        const booking = { 
+            id,
+            customerName,
             email,
-            tableId: parseInt(tableId) }
+            phoneNumber, 
+            tableId: parseInt(choosenTableId),
+            numberOfPeople: parseInt(numberOfGuests), 
+            date: new Date(bookedDate)}
+            console.log(booking);
         const response = await axios.post(`${API_URI}/Booking/CreateBooking`, booking);
         return response.status;
     } catch(error){
