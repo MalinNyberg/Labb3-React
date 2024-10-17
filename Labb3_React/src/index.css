@@ -1,0 +1,268 @@
+:root {
+  --main-color: rgb(84, 32, 1, 1);
+  --background-color: rgb(255, 255, 255);
+}
+
+* {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--main-color);
+  text-align: center;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+ul,
+p {
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.main-font {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.card-heading {
+  text-align: left;
+  padding-left: 0;
+}
+
+.card-p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.table-card {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-main-page {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 10px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  border: 1px solid var(--main-color);
+}
+
+.btn-margin {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+
+.centre-margin-top {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-link-color {
+  color: #FFFFFF;
+}
+
+.btn-center {
+  display: block;
+  margin: 4rem auto;
+}
+
+/*Container for all content on page*/
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 3em 1fr 2em;
+  min-width: 100vw;
+  padding: 0;
+}
+
+/*Grid for placement of navigation*/
+.container header.grid-header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  height: min-content;
+  background-color: var(--background-color);
+}
+
+/*Grid for main content area*/
+.container main.grid-main {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: var(--background-color);
+}
+
+/*Grid for footer*/
+.container footer.grid-footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  height: 6rem;
+  margin-top: 0;
+  background-color: var(--main-color);
+}
+
+.fa-solid, fa-bars {
+  color: var(--main-color);
+}
+
+/*Look for a normal, unvisited link*/
+a:link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/*Look for a link when the user mouses over it*/
+a:hover {
+  text-underline-offset: 0.2rem;
+  text-decoration: none;
+}
+
+footer a {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  color: #FFFFFF;
+  text-align: right;
+  padding-top: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+footer a:hover {
+  color: #FFFFFF;
+  text-decoration: underline #FFFFFF;
+}
+
+/*Main content area for start page to center the image*/
+#main-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  gap:2em;
+  margin-top: 2em;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-content p {
+  padding: 0;
+}
+
+.page-content-form {
+  width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Make image on home page smaller with smaller screen*/
+@media screen {
+  #main-flex-img {
+      width: 100vw;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .container main.grid-main {
+      grid-column-start: 1;
+      grid-column-end: 4;
+  }
+
+  .admin-page {
+      margin-left: 2rem;
+      margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 694px) {
+  ul,
+  p {
+      padding-left: 4rem;
+      padding-right: 4rem;
+  }
+
+  .page-content p {
+      padding-left: 4rem;
+      padding-right: 4rem;
+  }
+
+  .page-content-btn {
+      padding-left: 2rem;
+      padding-right: 2rem;
+  }
+
+  .page-content-form {
+      width: 90dvw;
+      padding-left: 2rem;
+      padding-right: 2rem;
+  }
+}
+
+/*Placement for loading icon*/
+/*.loading-icon {
+  margin-top: 50vh;
+  margin-left: 48vw;
+}*/
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 14em;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2em;
+  padding-top: 1rem;
+}
+
+.link-btn:hover {
+  color: #FFFFFF;
+  background-color: rgb(111, 0, 0)
+}
